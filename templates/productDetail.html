@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block linkInclude %} 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='productDetailStyle.css') }}" />
+{% endblock %}
+
+{% block title %} Prodct Details {% endblock %}
+
+{% block content %}
+
+<div class="d-flex flex-row">
+    <div class="col-3 m-1 ml-2 mt-3 pt-4">
+        <img alt="product image" src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674445/Croma%20Assets/Communication/Mobiles/Images/300822_0_on2t4l.png?tr=w-600" 
+            class="border rounded p-1" width="300px" height="400px" />
+    </div>
+    <div class="col-9 mt-3 container d-flex flex-column">
+        <div class="">
+            <h2 class="mb-0">Iphone 15 Pro Max </h2>
+            <p class="mb-1 px-3">Ram 16GB ROM 512GB 5G Support A17 chipset</p>
+            <h5 class="mb-0 text-decoration-underline">Features</h5>
+            <ul>
+                <li>Rear Camera - 48MP+12MP+12MP</li>
+                <li>Front Camera - 12MP</li>
+                <li>6.1 All Screen OLED Display</li>
+                <li>Warranty 1 Year</li>
+            </ul>
+        </div>
+
+        <div class="border border-3 border-gray rounded p-2 col-10">
+            <div class="d-flex justify-content-between">
+                <span class="">GEM</span>
+                <div class="d-inline-block">
+                    <span class="">$2005.00</span>
+                    <button class="btn bg-success text-white m-1">Buy Now</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="">Amazon</span>
+                <div class="d-inline-block">
+                    <span class="">$1995.00</span>
+                    <button class="btn bg-success text-white m-1">Buy Now</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="">Flipkart</span>
+                <div class="d-inline-block">
+                    <span class="">$2015.00</span>
+                    <button class="btn bg-success text-white m-1">Buy Now</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="">Tata cliq</span>
+                <div class="d-inline-block">
+                    <span class="">$2045.00</span>
+                    <button class="btn bg-success text-white m-1">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3 py-2 pb-3">
+    <form class="form-inline col-11 ml-3 m-auto">
+        <span>Get Price Drop &nbsp;<i class="fa-solid fa-bell"></i></span>
+        <div class="form-group mx-sm-3 mb-2 d-inline-block">
+          <input type="email" class="form-control" id="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group mx-sm-3 mb-2 d-inline-block">
+            <input type="number" class="form-control" id="price_down" placeholder="Enter Price">
+          </div>
+        <button type="submit" class="btn mb-2" style="background-color: #5e7ca0;color: #fff;">Subscribe</button>
+    </form>
+</div>
+
+<div class="container mx-auto">
+    <h4 class="text-center text-info">Historical Price Chart</h4>
+    <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
+</div>
+
+{% endblock %}
+
+
+{% block scriptContent %}
+
+<script>
+    const data = {
+        labels: ['2023-09-22','2023-09-23','2023-09-24','2023-09-25','2023-09-26', '2023-09-27', '2023-09-28','2023-09-29',],
+        datasets: [{
+            label: 'Lowest Price',
+            data: [2000, 1960, 1996, 2042, 1996, 1997, 1993, 1998],
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+        }]
+    };
+
+    const options = {
+        hover: {
+            mode: 'nearest',
+            intersect: true,
+            callbacks: {
+                label: function (tooltipItem) {
+                    const platform = tooltipItem.datasetIndex; // 0
+                    const price = tooltipItem.value; // 100
+                    return `Lowest price on ${platform}: ${price}`;
+                }
+            }
+        },
+        scales: {
+            yAxes: [{ticks: {min: 1900, max:2100}}],
+        }
+    };
+
+    const chart = new Chart('myChart', {
+        type: 'line',
+        data: data,
+        options: options
+    });
+
+</script>
+
+{% endblock %}

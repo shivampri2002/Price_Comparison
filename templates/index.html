@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block linkInclude %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='indexStyle.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <input id="product_search_input" type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="button_product_search" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+<h1 class="text-center"><span>Popular Product Categories</span> </h1>
+<br>
+<div class="container d-flex flex-row flex-wrap justify-content-around product_categories">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/upload/shared_doc/oxygen-v2_1619619912.jpg?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Oxygen Gas &amp; Accessories</strong></h5>
+                    <p class="card-text m-0"> Oxygen Concentrator </p>
+                    <p class="card-text m-0"> Oxygen Flow Meter </p>
+                    <p class="card-text m-0"> Compressed oxygen IS:309 </p>
+                    <p class="card-text m-0"> O2 Gas Cylinders - Steel </p>
+                    <p class="card-text m-0"> HF Nasal O2 Therapy Unit </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/images/new3.png?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Medical</strong></h5>
+                    <p class="card-text m-0"> Hand Sanitizer </p>
+                    <p class="card-text m-0"> Air Pollution Mask </p>
+                    <p class="card-text m-0"> Surgical Gloves </p>
+                    <p class="card-text m-0"> Covid-19 Kit for... </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/upload/shared_doc/sarar_1682716359.png?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>SARAS Collection</strong></h5>
+                    <p class="card-text m-0"> Handicrafts </p>
+                    <p class="card-text m-0"> Handloom Texti.. </p>
+                    <p class="card-text m-0"> Personal Care.. </p>
+                    <p class="card-text m-0"> Accessories </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="min-width: 320px;max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/images/image-88.png?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>FURNITURE </strong></h5>
+                    <p class="card-text m-0"> Office Chair </p>
+                    <p class="card-text m-0"> Computer Desk </p>
+                    <p class="card-text m-0"> Lounge Chair </p>
+                    <p class="card-text m-0"> Storage Rack </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="min-width: 320px;max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/images/new2.png?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>FIRE SAFETY </strong></h5>
+                    <p class="card-text m-0"> Fire </p>
+                    <p class="card-text m-0"> Extinguishers </p>
+                    <p class="card-text m-0"> Smoke </p>
+                    <p class="card-text m-0"> Sprinklers </p>
+                    <p class="card-text m-0"> Detectors Fire </p>
+                    <p class="card-text m-0"> Alarms </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="min-width: 320px;max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://assets-bg.gem.gov.in/resources/images/new4.png?version=20230831211743" 
+                    class="img-fluid rounded-start align-self-center" alt="card_image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>COMPUTERS </strong></h5>
+                    <p class="card-text m-0"> Desktop PC </p>
+                    <p class="card-text m-0"> Monitor </p>
+                    <p class="card-text m-0"> Printers </p>
+                    <p class="card-text m-0"> PC Software </p>
+                    <p class="card-text m-0"> MFDs </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center"><a href="https://mkp.gem.gov.in/browse_nodes/browse_list#!/categories" class="btn btn-secondary text-center">Explore GEM Marketplace</a></div>
+
+{% endblock %}
+
+
+{% block scriptContent %}
+
+<script>
+    const searchInput = document.getElementById("product_search_input");
+    const searchButton = document.getElementById("button_product_search");
+
+
+
+    function isValidUrl(string) {
+        try {
+        new URL(string);
+        return true;
+        } catch (err) {
+        return false;
+        }
+    }
+
+    searchInput.addEventListener('keyup', (e) => {
+        if(e.keycode == 13){
+            searchButton.click();
+        }
+    });
+
+    searchButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let searchStr = searchInput.value;
+        if(searchStr.trim() == ""){
+            //show to enter the url/name
+            return;
+        }
+        let isUrl = isValidUrl(searchStr);
+        if(isUrl){
+            let urlD = new Url(searchStr);
+            let domainName = urlD.hostname().split(".")[1];
+
+            if(domainName == "gem"){
+                //search for the same url in the ProductDetail table and get the url from the flask server
+                console.log();
+            }
+            else{
+                //show error for entering correct url
+                console.log();
+            }
+        }
+        else{
+            //send the text to the server and get back the url to go
+            console.log();
+        }
+    });
+
+</script>
+{% endblock %}
